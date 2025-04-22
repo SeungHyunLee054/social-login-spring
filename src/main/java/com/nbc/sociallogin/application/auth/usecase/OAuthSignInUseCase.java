@@ -1,9 +1,5 @@
 package com.nbc.sociallogin.application.auth.usecase;
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.nbc.sociallogin.application.auth.service.OAuthClientService;
 import com.nbc.sociallogin.domain.auth.vo.AuthUser;
 import com.nbc.sociallogin.domain.user.entity.User;
@@ -13,34 +9,35 @@ import com.nbc.sociallogin.infrastructure.oauth.dto.response.OAuthUserInfoRespon
 import com.nbc.sociallogin.infrastructure.oauth.type.OAuthProvider;
 import com.nbc.sociallogin.infrastructure.security.jwt.util.JwtUtil;
 import com.nbc.sociallogin.presentation.auth.dto.OAuthSignupDto;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 @RequiredArgsConstructor
 public class OAuthSignInUseCase {
-	private final UserService userService;
-	private final OAuthClientService oAuthClientService;
-	private final JwtUtil jwtUtil;
+    private final UserService userService;
+    private final OAuthClientService oAuthClientService;
+    private final JwtUtil jwtUtil;
 
-	@Transactional
-	public String signIn(OAuthSignupDto signupDto) {
-		OAuthLoginParam oAuthLoginParam = convertToLoginParam(signupDto);
-		OAuthUserInfoResponse userInfoResponse = oAuthClientService.fetchUserInfo(oAuthLoginParam);
+    @Transactional
+    public String signIn(OAuthSignupDto signupDto) {
+        OAuthLoginParam oAuthLoginParam = convertToLoginParam(signupDto);
+        OAuthUserInfoResponse userInfoResponse = oAuthClientService.fetchUserInfo(oAuthLoginParam);
 
-		User user = userService.findOrCreate(userInfoResponse);
+        User user = userService.findOrCreate(userInfoResponse);
 
-		return jwtUtil.generateToken(new AuthUser(user.getId(), user.getEmail(), user.getUserRole()));
-	}
+        return jwtUtil.generateToken(new AuthUser(user.getId(), user.getEmail(), user.getUserRole()));
+    }
 
-	public String getAuthorizationCode(OAuthProvider oAuthProvider) {
-		return oAuthClientService.getAuthorizationCode(oAuthProvider);
-	}
+    public String getAuthorizationCode(OAuthProvider oAuthProvider) {
+        return oAuthClientService.getAuthorizationCode(oAuthProvider);
+    }
 
-	private OAuthLoginParam convertToLoginParam(OAuthSignupDto signupDto) {
-		OAuthProvider oAuthProvider = OAuthProvider.from(signupDto.getProvider());
+    private OAuthLoginParam convertToLoginParam(OAuthSignupDto signupDto) {
+        OAuthProvider oAuthProvider = OAuthProvider.from(signupDto.getProvider());
 
-		return oAuthProvider.getOAuthParam(signupDto.getAuthorizationCode());
-	}
+        return oAuthProvider.getOAuthParam(signupDto.getAuthorizationCode());
+    }
 
 }
