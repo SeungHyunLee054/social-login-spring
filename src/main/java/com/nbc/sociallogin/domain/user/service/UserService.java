@@ -39,7 +39,7 @@ public class UserService {
 			.birth(userInfoResponse.getBirth())
 			.phone(userInfoResponse.getPhone())
 			.registrationType(RegistrationType.from(userInfoResponse.getOAuthProvider()))
-			.userRole(UserRole.USER)
+			.userRole(UserRole.ROLE_USER)
 			.build();
 
 		return userRepository.save(user);

@@ -3,7 +3,7 @@ package com.nbc.sociallogin.domain.user.enums;
 import java.util.Arrays;
 
 public enum UserRole {
-	ADMIN, USER;
+	ROLE_ADMIN, ROLE_USER;
 
 	public static UserRole of(String role) {
 		return Arrays.stream(UserRole.values())
