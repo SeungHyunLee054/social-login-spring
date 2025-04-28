@@ -5,7 +5,7 @@ import java.util.Arrays;
 public enum UserRole {
 	ROLE_ADMIN, ROLE_USER;
 
-	public static UserRole of(String role) {
+	public static UserRole from(String role) {
 		return Arrays.stream(UserRole.values())
 			.filter(r -> r.name().equalsIgnoreCase(role))
 			.findFirst()
