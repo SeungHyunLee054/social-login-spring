@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 import com.nbc.sociallogin.domain.user.enums.RegistrationType;
 import com.nbc.sociallogin.domain.user.enums.UserRole;
-import com.nbc.sociallogin.infrastructure.oauth.type.OAuthProvider;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

@@ -1,13 +1,13 @@
-package com.nbc.sociallogin.infrastructure.security.jwt.config;
+package com.nbc.sociallogin.presentation.config.filter;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nbc.sociallogin.infrastructure.security.jwt.filter.JwtAuthenticationFilter;
-import com.nbc.sociallogin.infrastructure.security.jwt.filter.JwtExceptionFilter;
-import com.nbc.sociallogin.infrastructure.security.jwt.util.JwtUtil;
+import com.nbc.sociallogin.infrastructure.security.util.JwtUtil;
+import com.nbc.sociallogin.presentation.filter.JwtAuthenticationFilter;
+import com.nbc.sociallogin.presentation.filter.JwtExceptionFilter;
 
 import lombok.RequiredArgsConstructor;
 

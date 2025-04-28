@@ -1,4 +1,4 @@
-package com.nbc.sociallogin.infrastructure.security.jwt.filter;
+package com.nbc.sociallogin.presentation.filter;
 
 import java.io.IOException;
 

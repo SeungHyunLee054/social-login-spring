@@ -1,4 +1,4 @@
-package com.nbc.sociallogin.infrastructure.security.jwt.util;
+package com.nbc.sociallogin.infrastructure.security.util;
 
 import java.util.Date;
 

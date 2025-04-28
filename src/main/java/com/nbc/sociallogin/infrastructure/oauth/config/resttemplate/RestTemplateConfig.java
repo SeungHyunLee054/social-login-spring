@@ -1,4 +1,4 @@
-package com.nbc.sociallogin.config.resttemplate;
+package com.nbc.sociallogin.infrastructure.oauth.config.resttemplate;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

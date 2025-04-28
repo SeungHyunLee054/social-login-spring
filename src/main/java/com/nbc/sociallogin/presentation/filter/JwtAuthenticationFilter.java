@@ -1,10 +1,10 @@
-package com.nbc.sociallogin.infrastructure.security.jwt.filter;
+package com.nbc.sociallogin.presentation.filter;
 
 import java.io.IOException;
 
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.nbc.sociallogin.infrastructure.security.jwt.util.JwtUtil;
+import com.nbc.sociallogin.infrastructure.security.util.JwtUtil;
 
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
@@ -27,7 +27,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 			return;
 		}
 
-		if (uri.startsWith("/auth") || uri.startsWith("/oauth")|| uri.contains("html")) {
+		if (uri.startsWith("/auth") || uri.startsWith("/oauth") || uri.contains("html")) {
 			filterChain.doFilter(request, response);
 			return;
 		}

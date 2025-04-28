@@ -1,4 +1,4 @@
-package com.nbc.sociallogin.config.web;
+package com.nbc.sociallogin.presentation.config.web;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.nbc.sociallogin.config.resolver.AuthUserArgumentResolver;
+import com.nbc.sociallogin.presentation.config.resolver.AuthUserArgumentResolver;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

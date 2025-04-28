@@ -1,4 +1,4 @@
-package com.nbc.sociallogin.common.annotation;
+package com.nbc.sociallogin.presentation.common.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

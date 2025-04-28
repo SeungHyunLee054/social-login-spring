@@ -1,22 +1,22 @@
-package com.nbc.sociallogin.application.auth.service;
+package com.nbc.sociallogin.infrastructure.oauth.provider;
 
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.nbc.sociallogin.infrastructure.oauth.client.OAuthClient;
 import com.nbc.sociallogin.infrastructure.oauth.dto.request.OAuthLoginParam;
 import com.nbc.sociallogin.infrastructure.oauth.dto.response.OAuthUserInfoResponse;
 import com.nbc.sociallogin.infrastructure.oauth.type.OAuthProvider;
 
-@Service
-public class OAuthClientService {
+@Component
+public class OAuthClientProvider {
 	private final Map<OAuthProvider, OAuthClient> authClients;
 
-	public OAuthClientService(List<OAuthClient> authClients) {
+	public OAuthClientProvider(List<OAuthClient> authClients) {
 		this.authClients = authClients.stream().collect(Collectors
 			.toUnmodifiableMap(OAuthClient::oAuthProvider,
 				Function.identity()));

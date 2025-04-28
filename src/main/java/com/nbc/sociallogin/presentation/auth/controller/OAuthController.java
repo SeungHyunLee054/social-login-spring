@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nbc.sociallogin.application.auth.usecase.OAuthSignInUseCase;
+import com.nbc.sociallogin.presentation.user.usecase.OAuthSignInUseCase;
 import com.nbc.sociallogin.infrastructure.oauth.type.OAuthProvider;
 import com.nbc.sociallogin.presentation.auth.dto.OAuthSignupDto;
 

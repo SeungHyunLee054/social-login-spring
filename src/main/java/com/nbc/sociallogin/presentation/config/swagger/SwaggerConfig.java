@@ -1,4 +1,4 @@
-package com.nbc.sociallogin.config.swagger;
+package com.nbc.sociallogin.presentation.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

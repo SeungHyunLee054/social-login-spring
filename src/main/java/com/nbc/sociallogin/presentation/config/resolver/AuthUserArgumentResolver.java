@@ -1,4 +1,4 @@
-package com.nbc.sociallogin.config.resolver;
+package com.nbc.sociallogin.presentation.config.resolver;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.lang.Nullable;
@@ -7,7 +7,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import com.nbc.sociallogin.common.annotation.Auth;
+import com.nbc.sociallogin.presentation.common.annotation.Auth;
 import com.nbc.sociallogin.domain.auth.vo.AuthUser;
 import com.nbc.sociallogin.domain.user.enums.UserRole;
 
